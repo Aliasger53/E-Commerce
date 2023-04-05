@@ -3,13 +3,17 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import { Link, NavLink } from "react-router-dom";
 
 function Header() {
   return (
     <div>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="#home">Admin Dashboard</Navbar.Brand>
+          {/* <Navbar.Brand href="#home">Admin Dashboard</Navbar.Brand> */}
+          <Link to="/" className="navbar-brand">
+            Admin Dashboard
+          </Link>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
@@ -30,7 +34,17 @@ function Header() {
               </NavDropdown> */}
             </Nav>
             <Nav>
-              <Nav.Link href="#deets">Log in</Nav.Link>
+              <li className="nav-item">
+                <NavLink to="/signin" className="nav-link">
+                  Signin
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink to="/signup" className="nav-link">
+                  Signup
+                </NavLink>
+              </li>
+
               {/* <Nav.Link eventKey={2} href="#memes">
                 Dank memes
               </Nav.Link> */}
